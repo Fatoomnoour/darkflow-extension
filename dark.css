@@ -1,0 +1,79 @@
+/* DarkFlow - أنماط الوضع الداكن */
+/* يُحقن في بداية تحميل الصفحة ليمنع الوميض */
+
+html.darkflow-active {
+  --df-bg: #1a1a1a;
+  --df-text: #e0e0e0;
+  --df-link: #6fb8f0;
+  --df-border: #333333;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* إلغاء العكس عن العناصر المرئية */
+html.darkflow-active img,
+html.darkflow-active video,
+html.darkflow-active canvas,
+html.darkflow-active svg,
+html.darkflow-active picture,
+html.darkflow-active [class*="emoji"],
+html.darkflow-active [class*="icon"],
+html.darkflow-active [role="img"],
+html.darkflow-active iframe {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* منع العكس عن الصور الخلفية */
+html.darkflow-active [style*="background-image"],
+html.darkflow-active [class*="bg-"],
+html.darkflow-active [class*="background"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* تحسين النصوص */
+html.darkflow-active body,
+html.darkflow-active p,
+html.darkflow-active span,
+html.darkflow-active div,
+html.darkflow-active a,
+html.darkflow-active li,
+html.darkflow-active td,
+html.darkflow-active th,
+html.darkflow-active label,
+html.darkflow-active input,
+html.darkflow-active textarea,
+html.darkflow-active select,
+html.darkflow-active button {
+  text-shadow: none !important;
+}
+
+/* تحسين الحدود */
+html.darkflow-active * {
+  border-color: var(--df-border, #333) !important;
+  box-shadow: none !important;
+}
+
+/* إصلاح الصور ذات الخلفية */
+html.darkflow-active img[src*=".png"],
+html.darkflow-active img[src*=".jpg"],
+html.darkflow-active img[src*=".jpeg"],
+html.darkflow-active img[src*=".gif"],
+html.darkflow-active img[src*=".webp"],
+html.darkflow-active img[src*=".svg"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* منع مشاكل القوائم المنسدلة */
+html.darkflow-active select option {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* شدة الوضع الداكن - متوسط */
+html.darkflow-mid {
+  filter: invert(0.9) hue-rotate(180deg) contrast(0.95);
+}
+
+/* شدة الوضع الداكن - خفيف */
+html.darkflow-low {
+  filter: invert(0.75) hue-rotate(180deg) contrast(0.9) brightness(1.1);
+}
